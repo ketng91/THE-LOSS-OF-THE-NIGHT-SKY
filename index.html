@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bài đọc song ngữ</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: #ffd6ba;
+  padding: 15px;
+  color: #7a4e3e;
+}
+
+.header-left {
+  position: absolute;
+  left: 15px;
+}
+
+.header-left a {
+  text-decoration: none;
+  color: #7a4e3e;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.header-left a:hover {
+  color: #ff6b6b;
+}
+
+.header-center {
+  font-size: 28px;
+  text-align: center;
+  padding: 0 120px; /* chừa chỗ cho Home */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+body {
+  font-family: Arial;
+  background-color: #fff8f0;
+  margin: 0;
+  text-align: center;
+}
+
+/* HEADER */
+header {
+  background-color: #ffd6ba;
+  padding: 15px;
+  color: #7a4e3e;
+}
+
+.header-center {
+  font-size: 28px;
+}
+
+/* BUTTON */
+.controls {
+  margin: 20px;
+}
+
+button {
+  padding: 10px 16px;
+  margin: 5px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #a0e7e5;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ffb3ba;
+}
+
+/* CONTENT */
+.container {
+  width: 80%;
+  margin: auto;
+  text-align: left;
+  font-size: 22px;
+}
+
+.pair {
+  margin-bottom: 12px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.pair.active {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transform: scale(1.02);
+}
+
+.speaker-icon{
+  float:right;
+  cursor:pointer;
+  color:#4a7c59;
+  margin-left:10px;
+}
+
+.speaker-icon:hover{
+  color:#ff6b6b;
+}
+
+/* EN */
+.en {
+  background: #d8f3dc;
+  padding: 12px;
+}
+
+/* VI */
+.vi {
+  background: #e3fdfd;
+  padding: 12px;
+  font-style: italic;
+  display: none;
+}
+
+/* footer */
+footer {
+  margin-top: 30px;
+  padding: 20px;
+  background: #fff0e1;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  header{
+    padding: 12px 10px;
+  }
+
+  .header-left{
+    left: 10px;
+    top: 12px;
+  }
+
+  .header-left a{
+    font-size: 16px;
+  }
+
+  .header-center{
+    font-size: 18px;
+    line-height: 1.4;
+    padding: 0 70px; /* tránh đè vào Home */
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  .container{
+    width: 95%;
+    font-size: 18px;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-left">
+    <a href="https://ketng91.github.io/khoathpt_Docsongngutubaihoc/">
+      <i class="fa-solid fa-house"></i> Home
+    </a>
+  </div>
+
+  <div class="header-center">
+    THE LOSS OF THE NIGHT SKY
+  </div>
+</header>
+
+<div class="controls">
+  <button onclick="autoPlay()">▶ Auto đọc</button>
+  <button onclick="stopAuto()">⏹ Dừng</button>
+
+<button onclick="toggleAllVI()" id="toggleBtn">Hiện bản dịch</button>
+</div>
+
+<div class="container">
+
+<div class="pair" onclick="toggleVI(this)">
+  <div class="en">
+    THE LOSS OF THE NIGHT SKY
+  </div>
+  <div class="vi">
+    SỰ BIẾN MẤT CỦA BẦU TRỜI ĐÊM
+  </div>
+</div>
+
+<div class="pair" onclick="toggleVI(this)">
+  <div class="en">
+    When we think about pollution, we usually picture dirty rivers or smoke from factories.
+  </div>
+  <div class="vi">
+    Khi nghĩ đến ô nhiễm, chúng ta thường hình dung những dòng sông bẩn hoặc khói từ các nhà máy.
+  </div>
+</div>
+
+<div class="pair" onclick="toggleVI(this)">
+  <div class="en">
+    However, there is another growing problem in modern cities: light pollution.
+  </div>
+  <div class="vi">
+    Tuy nhiên, còn có một vấn đề khác đang gia tăng tại các thành phố hiện đại: ô nhiễm ánh sáng.
+  </div>
+</div>
+
+<div class="pair" onclick="toggleVI(this)">
+  <div class="en">
+    Because of the excessive use of artificial light from streetlights, buildings, and advertising billboards, our nights are becoming brighter and brighter.
+  </div>
+  <div class="vi">
+    Do việc sử dụng quá mức ánh sáng nhân tạo từ đèn đường, các tòa nhà và biển quảng cáo, màn đêm của chúng ta ngày càng trở nên sáng hơn.
+  </div>
+</div>
+
+<div class="pair" onclick="toggleVI(this)">
+  <div class="en">
+    Today, many people living in urban areas can no longer view the Milky Way or the stars clearly when they look up at the sky.
+  </div>
+  <div class="vi">
+    Ngày nay, nhiều người sống ở khu vực đô thị không còn có thể nhìn rõ Dải Ngân Hà hay các vì sao khi ngước nhìn bầu trời.
+  </div>
+</div>
+
+<div class="pair" onclick="toggleVI(this)">
+  <div class="en">
+    This continuous brightness does not just stop us from stargazing; it also disrupts the natural behaviors of nocturnal animals.
+  </div>
+  <div class="vi">
+    Sự sáng liên tục này không chỉ ngăn cản chúng ta ngắm sao mà còn làm gián đoạn các hành vi tự nhiên của động vật sống về đêm.
+  </div>
+</div>
+
+<div class="pair" onclick="toggleVI(this)">
+  <div class="en">
+    These are creatures that hunt, travel, or reproduce during the night.
+  </div>
+  <div class="vi">
+    Đây là những sinh vật săn mồi, di chuyển hoặc sinh sản vào ban đêm.
+  </div>
+</div>
+
+<div class="pair" onclick="toggleVI(this)">
+  <div class="en">
+    For instance, newborn sea turtles use the natural light of the moon and stars to find their way to the ocean after hatching.
+  </div>
+  <div class="vi">
+    Ví dụ, những chú rùa biển mới nở sử dụng ánh sáng tự nhiên từ mặt trăng và các vì sao để tìm đường ra biển sau khi chui khỏi trứng.
+  </div>
+</div>
+
+<div class="pair" onclick="toggleVI(this)">
+  <div class="en">
+    Artificial lights from coastal hotels confuse them, causing the baby turtles to crawl in the wrong direction towards roads, where they often die.
+  </div>
+  <div class="vi">
+    Ánh sáng nhân tạo từ các khách sạn ven biển làm chúng mất phương hướng, khiến rùa con bò nhầm về phía đường sá, nơi chúng thường bị chết.
+  </div>
+</div>
+
+<div class="pair" onclick="toggleVI(this)">
+  <div class="en">
+    Furthermore, light pollution affects many species of birds.
+  </div>
+  <div class="vi">
+    Hơn nữa, ô nhiễm ánh sáng còn ảnh hưởng đến nhiều loài chim.
+  </div>
+</div>
+
+<div class="pair" onclick="toggleVI(this)">
+  <div class="en">
+    Millions of birds migrate across long distances at night, using the stars to guide their journey.
+  </div>
+  <div class="vi">
+    Hàng triệu con chim di cư qua những quãng đường dài vào ban đêm, sử dụng các vì sao để định hướng hành trình.
+  </div>
+</div>
+
+<div class="pair" onclick="toggleVI(this)">
+  <div class="en">
+    When they fly over bright cities, they often become disoriented by the dazzling lights.
+  </div>
+  <div class="vi">
+    Khi bay qua những thành phố rực sáng, chúng thường bị mất phương hướng bởi ánh đèn chói lóa.
+  </div>
+</div>
+
+<div class="pair" onclick="toggleVI(this)">
+  <div class="en">
+    They may lose their way, fly in circles until they drop from exhaustion, or accidentally collide with tall glass skyscrapers and get seriously injured.
+  </div>
+  <div class="vi">
+    Chúng có thể lạc đường, bay vòng tròn cho đến khi kiệt sức hoặc vô tình đâm vào các tòa nhà chọc trời bằng kính và bị thương nghiêm trọng.
+  </div>
+</div>
+
+<div class="pair" onclick="toggleVI(this)">
+  <div class="en">
+    Fortunately, solving this environmental problem is relatively simple and does not require expensive technology.
+  </div>
+  <div class="vi">
+    May mắn thay, việc giải quyết vấn đề môi trường này khá đơn giản và không đòi hỏi công nghệ đắt đỏ.
+  </div>
+</div>
+
+<div class="pair" onclick="toggleVI(this)">
+  <div class="en">
+    Local councils can replace traditional streetlamps with shaded fixtures that direct light downward onto the ground rather than scattering it into the sky.
+  </div>
+  <div class="vi">
+    Chính quyền địa phương có thể thay thế các đèn đường truyền thống bằng những thiết bị có chụp che, hướng ánh sáng xuống mặt đất thay vì phát tán lên bầu trời.
+  </div>
+</div>
+
+<div class="pair" onclick="toggleVI(this)">
+  <div class="en">
+    Additionally, turning off unnecessary lights in office buildings after midnight can save energy, lower electricity costs, and create a safer environment for urban wildlife.
+  </div>
+  <div class="vi">
+    Ngoài ra, việc tắt các đèn không cần thiết trong các tòa nhà văn phòng sau nửa đêm có thể tiết kiệm năng lượng, giảm chi phí điện và tạo môi trường an toàn hơn cho động vật hoang dã trong đô thị.
+  </div>
+</div>
+
+
+</div>
+<footer>© Lớp Anh thầy Kết</footer>
+
+<script>
+let showAll = false;
+
+function toggleAllVI() {
+  const viList = document.querySelectorAll('.vi');
+  const btn = document.getElementById('toggleBtn');
+
+  showAll = !showAll;
+
+  viList.forEach(v => {
+    v.style.display = showAll ? 'block' : 'none';
+  });
+
+  btn.innerText = showAll ? 'Ẩn bản dịch' : 'Hiện bản dịch';
+}
+
+/* ===== TOGGLE DỊCH TỪNG CÂU ===== */
+function toggleVI(el) {
+  const vi = el.querySelector('.vi');
+  vi.style.display = (vi.style.display === 'block') ? 'none' : 'block';
+}
+
+/* ===== SPEECH ===== */
+function speak(text){
+
+  speechSynthesis.cancel();
+
+  const utter = new SpeechSynthesisUtterance(text);
+
+  utter.lang = "en-US";
+
+  // đọc tự nhiên hơn
+  utter.rate = 0.9;
+  utter.pitch = 1.1;
+  utter.volume = 1;
+
+  const voices = speechSynthesis.getVoices();
+
+  // ưu tiên các giọng nữ
+  const femaleVoice =
+      voices.find(v => v.name.includes("Jenny")) ||
+      voices.find(v => v.name.includes("Aria")) ||
+      voices.find(v => v.name.includes("Female")) ||
+      voices.find(v => v.name.includes("Zira")) ||
+      voices.find(v => v.name.includes("Samantha")) ||
+      voices.find(v => v.name.includes("Google UK English Female")) ||
+      voices.find(v => v.name.includes("Google US English")) ||
+      voices.find(v => v.lang === "en-US");
+
+  if(femaleVoice){
+      utter.voice = femaleVoice;
+      console.log("Using voice:", femaleVoice.name);
+  }
+
+  speechSynthesis.speak(utter);
+}
+/* DOUBLE CLICK ĐỂ NGHE */
+document.querySelectorAll('.pair').forEach(pair => {
+  pair.addEventListener('dblclick', () => {
+    const text = pair.querySelector('.en').innerText;
+    speechSynthesis.cancel();
+    speak(text);
+  });
+});
+
+/* ===== AUTO ĐỌC ===== */
+let index = 0;
+let interval;
+
+function autoPlay() {
+  const pairs = document.querySelectorAll('.pair');
+  index = 0;
+
+  speechSynthesis.cancel();
+
+  interval = setInterval(() => {
+    if (index >= pairs.length) {
+      clearInterval(interval);
+      return;
+    }
+
+    const text = pairs[index].querySelector('.en').innerText;
+    speak(text);
+
+    index++;
+  }, 3500);
+}
+
+function stopAuto() {
+  clearInterval(interval);
+  speechSynthesis.cancel();
+}
+
+document.querySelectorAll('.en').forEach(en => {
+
+  const text = en.innerText.trim();
+
+  const icon = document.createElement('i');
+
+  icon.className =
+    'fa-solid fa-volume-high speaker-icon';
+
+  icon.onclick = function(e){
+    e.stopPropagation();
+    speak(text);
+  };
+
+  en.appendChild(icon);
+
+});
+
+speechSynthesis.onvoiceschanged = () => {
+  speechSynthesis.getVoices();
+};
+
+</script>
+
+</body>
+</html>
